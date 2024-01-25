@@ -1,4 +1,3 @@
-#include <math.h>
 #include "NumClass.h"
     
 int RecursiveNumDigit(int n) {
@@ -11,8 +10,12 @@ int RecursiveNumDigit(int n) {
 int RecursiveisArmstrong(int n, int t) {
     if (n == 0)
         return 0;
+
+    int tmp=1;
+    for (int i = 0; i < t; i++)
+        tmp*=(n%10);
     
-    return pow(n%10, t) + RecursiveisArmstrong(n/10, t);
+    return tmp + RecursiveisArmstrong(n/10, t);
 }
 
 int isArmstrong(int n){

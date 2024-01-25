@@ -1,4 +1,3 @@
-#include <math.h>
 #include "NumClass.h"
 
 int fac(int);
@@ -9,7 +8,7 @@ int isPrime(int n) {
 
     int i;
 
-    for(i =2; i <= sqrt(n); ++i){
+    for(i =2; i < n; ++i){
         if (n%i == 0)
             return 0;
     }

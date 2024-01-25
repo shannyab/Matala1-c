@@ -35,13 +35,13 @@ libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	gcc -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
 
 mains: main.o libclassrec.a
-	gcc -g -Wall -o mains main.o libclassrec.a -lm
+	gcc -g -Wall -o mains main.o libclassrec.a
 
 maindloop: main.o libclassloops.so
-	gcc -g -Wall -o maindloop main.o ./libclassloops.so -lm
+	gcc -g -Wall -o maindloop main.o ./libclassloops.so
 
 maindrec: main.o libclassrec.so
-	gcc -g -Wall -o maindrec main.o ./libclassrec.so -lm
+	gcc -g -Wall -o maindrec main.o ./libclassrec.so
 
 clean:
 	rm -f *.o *.a *.so mains maindloop maindrec

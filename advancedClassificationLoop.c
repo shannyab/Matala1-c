@@ -1,4 +1,3 @@
-#include <math.h>
 #include "NumClass.h"
 
 int isArmstrong(int n) {
@@ -12,7 +11,10 @@ int isArmstrong(int n) {
     x = n;
 
     while(x > 0) {
-        sum= pow(x%10, digit_sum)+sum;
+        int tmp=1;
+        for (int i = 0; i < digit_sum; i++)
+            tmp*=(x%10);
+        sum=tmp+sum;
         x=x/ 10;
     }
 
